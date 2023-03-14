@@ -1,0 +1,8 @@
+값을 넘기는 방법
+클라->서버 request
+1. get
+2. post
+ip주소/index.php?
+이것을 get 방법이라고 함
+localhost?name = 녹칸다
+두개를 보낼때 변수 이름=90&변수이름=80 처럼 사용함
