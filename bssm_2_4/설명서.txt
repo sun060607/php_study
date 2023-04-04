@@ -1,0 +1,12 @@
+DB의 이름은 bssm_2_4로 만들고 senor table을 아래와 같이 만드시오
+num : key값 int ai
+did : 디바이스 아이디varchar2(20)
+temp : 온도값 float
+humi : 습도값 float
+date : 업로드시간varchar2(20)
+insert into sensor(did,temp,humi,date) values('1234n',30.11,123,'123');
+num : key 값
+did : 디바잇, 아이디archar2(20)
+loc : 설치 장소archar2(50)
+type : 센서 종류archar2(20)
+date : 설치 날짜archar2(20)
