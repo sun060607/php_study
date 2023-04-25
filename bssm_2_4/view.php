@@ -36,7 +36,6 @@
    $result = mysqli_query($conn, $query);
    echo $query;
    //결과를 출력한다
- 
    echo "<table border=1 width=500>"; 
       echo "<tr>";
     echo "<th>번호</th>";
@@ -45,7 +44,16 @@
     echo "<th>습도</th>";
     echo "<th>업로드</th>";
     echo "</tr>";
+    $i = 0;
    while($row = mysqli_fetch_assoc($result)){
+    $mylabel[$i] = $row['date'];
+    $mytemp[$i] = $row['temp'];
+    $myhumi[$i] = $row['humi'];
+    if($i ==0){
+      $mytemp2 = $row['temp'];
+      $myhumi2 = $row['humi'];
+    }
+    $i++;
     echo "<tr>";
     echo "<td>".$row['num']."</td>";
     echo "<td>".$row['did']."</td>";
@@ -54,7 +62,15 @@
     echo "<td>".$row['date']."</td>";
     echo "</tr>";
   }
-
   echo "</table>";
-   
+  echo "<table border=1 width=500>"; 
+  echo "<tr align = center><td>";
+  include "temp.php";
+  echo "</td><td>";
+  include "humi.php";
+  echo "</td></tr>";
+  echo "<tr><td colspan>";
+  include "graph.php";
+  echo "</td></tr>";
+  echo "</table>";
 ?>

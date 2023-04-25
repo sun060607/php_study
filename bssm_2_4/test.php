@@ -1,1 +1,4 @@
-<h1>안녕하세요</h1>
+<?php
+    $array = [1,2,3,4,5,6,7];
+    echo json_encode $array;
+?>
