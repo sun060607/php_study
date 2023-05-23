@@ -1,8 +1,11 @@
+<?php
+  include 'db_info.php';
+?>
 <form method = post action=view.php>
 <select name="did">
   <option value="none"></option>
   <?php
-     $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+     $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
      //데이터를 읽어오는 쿼리를 작성한다
      $query = "select * from device;";
      //쿼리를 실행한다
@@ -29,7 +32,7 @@
     exit;
   }
   //MYSQL연결한다
-   $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+  $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
    //데이터를 읽어오는 쿼리를 작성한다
    $query = "select * from sensor where did='".$_POST['did']."' order by num ".$_POST['order']." limit ".$_POST['limt'].";";
    //쿼리를 실행한다

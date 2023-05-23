@@ -47,7 +47,8 @@
 </head>
 <body>
   <?php 
-    $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+   include 'db_info.php';
+   $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
     $query = "select * from device;";
     $result = mysqli_query($conn, $query);
     $i = 0;

@@ -6,7 +6,8 @@
   //device table에 접속해서 있는지 없는지 확인한다
 
    //MYSQL연결한다
-     $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+   include 'db_info.php';
+   $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
      $query2 = "select * from device where did = '".$did."'";
      $result2 = mysqli_query($conn, $query2);
      $count = mysqli_num_rows($result2);

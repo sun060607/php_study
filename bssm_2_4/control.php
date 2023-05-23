@@ -1,5 +1,6 @@
 <?php
-   $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+    include 'db_info.php';
+    $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
    $did = $_GET['did'];
    $query = "select * from control where did='".$did."' and checked=0 order by num desc limit 1;";
    $result = mysqli_query($conn, $query);

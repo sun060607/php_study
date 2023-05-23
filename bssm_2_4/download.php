@@ -1,5 +1,6 @@
 <?php 
-  $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+ include 'db_info.php';
+ $conn = mysqli_connect('localhost',$db_id, $db_pw,$db_name);
   //데이터를 읽어오는 쿼리를 작성한다
   $query = "select * from sensor where did='".$_GET['did']."' order by num desc limit 30;";
   //쿼리를 실행한다
