@@ -1,6 +1,5 @@
-
-
 <?php
+//2406박민성
 ?>
 <!DOCTYPE html>
 <html>
